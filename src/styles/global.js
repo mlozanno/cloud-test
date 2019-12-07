@@ -10,14 +10,27 @@ export default createGlobalStyle`
 	}
 
 	html, body, #root {
-		min-height: 100%;
+		min-height: 100vh;
+		height: 100%;
+	}
+
+	html {
+		font-size: 10px;
 	}
 
 	body {
+		background-image: linear-gradient(to right top, #00c9ff, #00dbf8, #00eae2, #41f6c2, #92fe9d);
 		-webkit-font-smoothing: antialiased !important;
+		padding: 8rem 0;
 	}
 
 	body, button, input, textarea {
-		font-family: 'Roboto', Arial, Helvetica, sans-serif
+		font-family: 'Roboto', Arial, Helvetica, sans-serif;
+		font-size: 1.6rem;
+	}
+
+	h1 {
+		font-size: 2.4rem;
+		text-align: center;
 	}
 `;
