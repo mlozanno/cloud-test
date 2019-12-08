@@ -30,8 +30,7 @@ export default function Main() {
 		list
 			.map(item => {
 				const [hoursPart, minutesPart] = item.time.split(':');
-				const a = Number(hoursPart) + Number(minutesPart) / 60;
-				return a;
+				return Number(hoursPart) + Number(minutesPart) / 60;
 			})
 			.reduce((acc, e) => acc + e, 0);
 
