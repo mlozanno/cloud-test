@@ -37,3 +37,5 @@ Using the mask was an alternative not to add treatment complexity and date conve
 ### Styled-components
 
 And I prefer to use styled-components because of its versatility of using 'sass-on-js'
+
+![Print](https://image.prntscr.com/image/Vl6uIUMBSwKCNUdlhoqt7Q.png)
