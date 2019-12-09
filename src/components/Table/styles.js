@@ -20,6 +20,18 @@ export const Container = styled.div`
 	th {
 		background: #92fe9d;
 		color: #333;
+		transition: background 0.2s linear;
+
+		&:not(:last-child) {
+			&:hover {
+				background: #6afd79;
+				cursor: pointer;
+			}
+		}
+
+		&:last-child {
+			text-align: center;
+		}
 	}
 
 	tbody > tr:nth-child(odd) {
