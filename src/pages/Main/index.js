@@ -37,8 +37,11 @@ export default function Main() {
 			</Paper>
 
 			<Paper>
-				<h3>Tempo total: {totalTime}</h3>
-				<Table exerciseList={exerciseList} setExerciseList={setExerciseList} />
+				<Table
+					exerciseList={exerciseList}
+					setExerciseList={setExerciseList}
+					totalTime={totalTime}
+				/>
 			</Paper>
 		</Container>
 	);

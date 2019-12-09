@@ -35,4 +35,15 @@ export const Container = styled.div`
 		font-size: 1.8rem;
 		cursor: pointer;
 	}
+
+	.empty-state {
+		text-align: center;
+		font-size: 3.2rem;
+		color: #ccc;
+		padding: 3.2rem 0;
+
+		svg {
+			font-size: 10rem;
+		}
+	}
 `;
