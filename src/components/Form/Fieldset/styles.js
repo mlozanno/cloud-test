@@ -9,6 +9,11 @@ export const Container = styled.fieldset`
 		margin-bottom: 0.8rem;
 	}
 
+	span {
+		color: #e84118;
+		font-size: 1.2rem;
+	}
+
 	@media (min-width: 600px) {
 		> div {
 			display: flex;

@@ -1,13 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { MdRemoveCircle } from 'react-icons/md';
 import { Container } from './styles';
 
 export default function Table({ exerciseList, setExerciseList }) {
 	const removeExercise = index => {
-		const newArr = exerciseList.filter((val, el) => index !== el);
+		const newArr = exerciseList.filter((_, el) => index !== el);
 		setExerciseList(newArr);
 	};
+
 	return (
 		<Container>
 			<table>
@@ -36,3 +38,12 @@ export default function Table({ exerciseList, setExerciseList }) {
 		</Container>
 	);
 }
+
+Table.propTypes = {
+	exerciseList: PropTypes.arrayOf(
+		PropTypes.objectOf(
+			PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+		)
+	).isRequired,
+	setExerciseList: PropTypes.func.isRequired,
+};

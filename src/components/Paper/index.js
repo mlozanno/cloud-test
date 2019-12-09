@@ -8,6 +8,5 @@ export default function Paper({ children }) {
 }
 
 Paper.propTypes = {
-	children: PropTypes.oneOfType([PropTypes.element, PropTypes.string])
-		.isRequired,
+	children: PropTypes.node.isRequired,
 };

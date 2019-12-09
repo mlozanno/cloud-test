@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 import MaskedInput from 'react-text-mask';
 
 import Fieldset from './Fieldset';
-
-// import { Container } from './styles';
 
 export default function Form({ exerciseList, setExerciseList }) {
 	const [isSubmited, setIsSubmited] = useState(false);
@@ -57,8 +56,6 @@ export default function Form({ exerciseList, setExerciseList }) {
 
 		if (Object.keys(errors).length === 0) {
 			setExerciseList([...exerciseList, data]);
-		} else {
-			console.log(errors);
 		}
 	};
 
@@ -66,12 +63,12 @@ export default function Form({ exerciseList, setExerciseList }) {
 		<form onSubmit={handleSubmit}>
 			<Fieldset legend="Adicionar Exercício">
 				<div>
-					<input type="time" placeholder="Tempo" name="time" />
+					<input type="time" placeholder="Tempo" name="time" required />
 					{isSubmited && errors.time && <span>{errors.time}</span>}
 				</div>
 
 				<div>
-					<select name="type">
+					<select name="type" required>
 						<option value="">Modalidade</option>
 						<option value="Corrida">Corrida</option>
 						<option value="Bicicleta">Bicicleta</option>
@@ -86,6 +83,7 @@ export default function Form({ exerciseList, setExerciseList }) {
 						placeholder="Data"
 						guide={false}
 						name="date"
+						required
 					/>
 
 					{isSubmited && errors.date && <span>{errors.date}</span>}
@@ -98,3 +96,12 @@ export default function Form({ exerciseList, setExerciseList }) {
 		</form>
 	);
 }
+
+Form.propTypes = {
+	exerciseList: PropTypes.arrayOf(
+		PropTypes.objectOf(
+			PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+		)
+	).isRequired,
+	setExerciseList: PropTypes.func.isRequired,
+};
