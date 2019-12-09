@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import { MdRemoveCircle, MdDirectionsBike } from 'react-icons/md';
 import { Container } from './styles';
 
-export default function Table({ exerciseList, setExerciseList, totalTime }) {
+export default function Table({ exerciseList, setExerciseList }) {
 	const removeExercise = index => {
 		const newArr = exerciseList.filter((_, el) => index !== el);
 		setExerciseList(newArr);
 	};
 
-	const dynamicSort = (prop, cb) => {
+	const dynamicSort = prop => {
 		const c = exerciseList.sort((a, b) => {
 			if (a[prop] < b[prop]) return -1;
 
@@ -24,7 +24,6 @@ export default function Table({ exerciseList, setExerciseList, totalTime }) {
 
 	return (
 		<>
-			{exerciseList.length > 0 && <h3>Tempo total: {totalTime}</h3>}
 			<Container>
 				{exerciseList.length > 0 ? (
 					<table>

@@ -37,6 +37,7 @@ export default function Main() {
 			</Paper>
 
 			<Paper>
+				{exerciseList.length > 0 && <h3>Tempo total: {totalTime}</h3>}
 				<Table
 					exerciseList={exerciseList}
 					setExerciseList={setExerciseList}
