@@ -1,11 +1,14 @@
 import styled from 'styled-components';
 
-export const Container = styled.table`
-	width: 100%;
+export const Container = styled.div`
 	overflow-x: auto;
-	border-collapse: collapse;
 
-	text-align: left;
+	table {
+		width: 100%;
+		min-width: 600px;
+		border-collapse: collapse;
+		text-align: left;
+	}
 
 	th,
 	td {
